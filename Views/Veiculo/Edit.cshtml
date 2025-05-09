@@ -1,0 +1,60 @@
+﻿@model AppTeste.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Editar Veículo";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-warning text-dark rounded-top-4">
+                    <h3 class="mb-0">Editar Veículo</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Nome do Veículo</label>
+                            <input asp-for="Name" class="form-control" placeholder="Ex: Corolla, Palio..." />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Placa" class="form-label">Placa</label>
+                            <input asp-for="Placa" class="form-control" placeholder="Ex: XYZ-1234" />
+                            <span asp-validation-for="Placa" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AnoFabricacao" class="form-label">Ano de Fabricação</label>
+                            <input asp-for="AnoFabricacao" class="form-control" placeholder="Ex: 2019" />
+                            <span asp-validation-for="AnoFabricacao" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AnoModelo" class="form-label">Ano do Modelo</label>
+                            <input asp-for="AnoModelo" class="form-control" placeholder="Ex: 2020" />
+                            <span asp-validation-for="AnoModelo" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-warning btn-lg text-white fw-bold">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <a asp-action="Index" class="btn btn-link">← Voltar à lista</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
