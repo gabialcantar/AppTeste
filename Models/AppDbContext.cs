@@ -12,5 +12,7 @@ namespace AppTeste.Models
         public DbSet<Veiculo> Veiculo { get; set; }
 
         public DbSet<Consumo> Consumos { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
