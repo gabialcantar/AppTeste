@@ -10,5 +10,7 @@ namespace AppTeste.Models
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Veiculo> Veiculo { get; set; }
+
+        public DbSet<Consumo> Consumos { get; set; }
     }
 }

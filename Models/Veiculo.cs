@@ -20,5 +20,8 @@ namespace AppTeste.Models
 
         [Required(ErrorMessage = "Obrigatório informar o Ano do Modelo")]
         public int AnoModelo { get; set; }
+
+        // relação virtual de consumo na query 
+        public ICollection<Consumo> Consumos { get; set; }
     }
 }
